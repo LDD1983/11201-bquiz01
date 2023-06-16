@@ -33,6 +33,8 @@ foreach($rows as $id => $text){
                 $row['pw']=$_POST['pw'][$id];
             break;
             case 'menu':
+                $row['text']=$text;
+                $row['href']=$_POST['href'][$id];
             break;
             default:
             if(isset($_POST['text'])){
@@ -46,4 +48,4 @@ foreach($rows as $id => $text){
 
 }
 
-to("../backend.php?do=$table");
+//to("../backend.php?do=$table");

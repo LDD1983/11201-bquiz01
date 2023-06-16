@@ -292,6 +292,16 @@ class Bottom extends DB{
     }
 
 }
+class Menu extends DB{
+
+    public $header='選單管理';
+
+    public function __construct()
+    {
+        parent::__construct('menu');
+    }
+
+}
 
 //在base.php中先宣告一個資料表的變數出來
 //因為base.php會被include到主要的index.php及backend.php中
@@ -305,3 +315,4 @@ $Image=new Image;
 $Mvim=new Mvim;
 $News=new News;
 $Admin=new Admin;
+$Menu=new Menu;
