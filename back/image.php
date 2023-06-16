@@ -1,7 +1,7 @@
 
 
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <p class="t cent botli"><?=$Image->header['image'];?></p>
+    <p class="t cent botli"><?=$Title->header;?></p>
     <form method="post" action="?do=tii">
         <table width="100%">
             <tbody>

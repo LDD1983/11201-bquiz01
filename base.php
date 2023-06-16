@@ -209,8 +209,7 @@ class Ad extends DB{
 
     public function __construct()
     {
-        $this->pdo=new PDO($this->dsn,$this->user,$this->pw);
-        $this->table='ad';
+        parent::__construct('ad');
     }
 
 
@@ -221,10 +220,58 @@ class Title extends DB{
 
     public function __construct()
     {
-        $this->pdo=new PDO($this->dsn,$this->user,$this->pw);
-        $this->table='title';
+        parent::__construct('title');
     }
 
+}
+class Mvim extends DB{
+
+    public $header='動畫圖片管理';
+
+    public function __construct()
+    {
+        parent::__construct('mvim');
+    }
+
+}
+class Image extends DB{
+
+    public $header='校園映像資料管理';
+
+    public function __construct()
+    {
+        parent::__construct('image');
+    }
+
+}
+class News extends DB{
+
+    public $header='最新消息資料管理';
+
+    public function __construct()
+    {
+        parent::__construct('news');
+    }
+
+}
+class Total extends DB{
+
+    public $header='進站人數管理';
+
+    public function __construct()
+    {
+        parent::__construct('total');
+    }
+
+}
+class Bottom extends DB{
+
+    public $header='頁尾版權管理';
+
+    public function __construct()
+    {
+        parent::__construct('bottom');
+    }
 
 }
 
@@ -232,8 +279,8 @@ class Title extends DB{
 //因為base.php會被include到主要的index.php及backend.php中
 //所以可以確保每個頁面都能使用到這些變數
 //使用首字大寫是為了方便識別這個變數是物件
-$Total=new DB('total');
-$Bottom=new DB("bottom");
+$Total=new Total;
+$Bottom=new Bottom;
 $Title=new Title;
 $Ad=new Ad;
-$Image=new DB("image");
+$Image=new Image;
