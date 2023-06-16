@@ -1,6 +1,6 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli"><?=$Title->header;?></p>
-    <form method="post" action="?do=tii">
+    <form method="post" action="./api/update_title.php">
         <table width="100%">
             <tbody>
                 <tr class="yel">
@@ -20,16 +20,17 @@
                         <img src="./upload/<?=$row['img'];?>" style="width:300px;height:30px">
                     </td>
                     <td>
-                        <input type="text" name="text" value="<?=$row['text'];?>">
+                        <input type="text" name="text[<?=$row['id'];?>]" value="<?=$row['text'];?>">
                     </td>
                     <td>
                         <input type="radio" name="sh" value="<?=$row['id'];?>">
                     </td>
                     <td>
-                        <input type="checkbox" name="del" value="<?=$row['id'];?>">
+                        <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
                     </td>
                     <td>
                         <input type="button" value="更新圖片">
+                        
                     </td>
                 </tr>
             <?php

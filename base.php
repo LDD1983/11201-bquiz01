@@ -85,6 +85,7 @@ class DB{
             }
 
             $sql="update $this->table set ".join(',',$tmp)." where `id`='{$arg['id']}'";
+
         }else{
             //insert
 
@@ -101,7 +102,8 @@ class DB{
      * 刪除資料的方法
      * 限制只能帶入一個參數
      * $arg 如果是陣列，表示要刪除符合陣列條件的資料(可能是多筆刪除)
-     * $arg 如果是id，表示要刪除指定id的資料
+     * $arg 如果是數字，表示要刪除指定id的資料
+     * $arg 如果是字串，表示要刪除指定SQL條件語法的資料
      */
     function del($arg){
         $sql="delete from $this->table ";
@@ -113,9 +115,16 @@ class DB{
                 }
 
                 $sql=$sql . " where " . join(" && " ,$tmp);
+            }else if(is_numeric($arg)){
+
+                $sql=$sql . " where `id`=". $arg;
+
             }else{
+
                 $sql=$sql . $arg;
             }
+
+            echo $sql;
 
         return $this->pdo->exec($sql);
     }
