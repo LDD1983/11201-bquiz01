@@ -6,7 +6,6 @@ class DB{
     protected $user="root";
     protected $pw="";
     protected $pdo;
-
     /**
      * 建構式
      * 在實例化時，需要帶入一個資料表名稱，並會在實例化時，建立起對資料庫的連線
@@ -204,7 +203,30 @@ function q($sql){
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
+class Ad extends DB{
 
+    public $header='動態文字廣告管理';
+
+    public function __construct()
+    {
+        $this->pdo=new PDO($this->dsn,$this->user,$this->pw);
+        $this->table='ad';
+    }
+
+
+}
+class Title extends DB{
+
+    public $header='網站標題管理';
+
+    public function __construct()
+    {
+        $this->pdo=new PDO($this->dsn,$this->user,$this->pw);
+        $this->table='title';
+    }
+
+
+}
 
 //在base.php中先宣告一個資料表的變數出來
 //因為base.php會被include到主要的index.php及backend.php中
@@ -212,5 +234,6 @@ function q($sql){
 //使用首字大寫是為了方便識別這個變數是物件
 $Total=new DB('total');
 $Bottom=new DB("bottom");
-$Title=new DB("title");
-$Ad=new DB("ad");
+$Title=new Title;
+$Ad=new Ad;
+$Image=new DB("image");

@@ -78,7 +78,7 @@
 			$do=$_GET['do']??'title'; //使用三元運算式來取得網址的GET參數
 
 			$file="./back/".$do.".php"; //建立檔案路徑及檔名
-
+			
 			//判斷檔案是否存在,存在則載入,不存在則載入main.php
 			if(file_exists($file)){
 				include $file;
