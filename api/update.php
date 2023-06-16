@@ -4,9 +4,12 @@ include_once "../base.php";
 //dd($_POST);
 $table=$_POST['table'];
 $db=ucfirst($table);
+//dd($_POST);
 
 if(isset($_POST['text'])){
     $rows=$_POST['text'];
+}else if($table=='admin'){
+    $rows=$_POST['acc'];
 }else{
     $rows=array_column($$db->all(),'img','id');
 }
@@ -26,6 +29,8 @@ foreach($rows as $id => $text){
                 $row['sh']=($_POST['sh']==$id)?1:0;
             break;
             case 'admin':
+                $row['acc']=$text;
+                $row['pw']=$_POST['pw'][$id];
             break;
             case 'menu':
             break;

@@ -220,6 +220,15 @@ class Ad extends DB{
     {
         parent::__construct('ad');
     }
+}
+class Admin extends DB{
+
+    public $header='管理者帳號管理';
+
+    public function __construct()
+    {
+        parent::__construct('admin');
+    }
 
 
 }
@@ -295,3 +304,4 @@ $Ad=new Ad;
 $Image=new Image;
 $Mvim=new Mvim;
 $News=new News;
+$Admin=new Admin;
