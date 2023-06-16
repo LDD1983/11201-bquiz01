@@ -1,13 +1,16 @@
-<h3>新增動態文字廣告</h3>
+<?php
+include_once "../base.php";
+$table=$_GET['table'];
+$db=ucfirst($table);
+?>
+
+<h3><?=$$db->add_header;?></h3>
 <hr>
 <form action="./api/add.php" method="post" enctype="multipart/form-data">
     <table>
+        <?=$$db->add_form();?>
         <tr>
-            <td>動態文字廣告：</td>
-            <td><input type="text" name='text'></td>
-        </tr>
-        <tr>
-            <input type="hidden" name="table" value='ad'>
+        <input type="hidden" name="table" value='<?=$table;?>'>
             <td><input type="submit" value="新增"></td>
             <td><input type="reset" value="重置"></td>
         </tr>

@@ -47,5 +47,4 @@ foreach($rows as $id => $text){
     }
 
 }
-
-//to("../backend.php?do=$table");
+to("../backend.php?do=$table");
