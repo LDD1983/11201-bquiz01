@@ -124,7 +124,7 @@ class DB{
                 $sql=$sql . $arg;
             }
 
-            echo $sql;
+          //  echo $sql;
 
         return $this->pdo->exec($sql);
     }
@@ -293,3 +293,4 @@ $Bottom=new Bottom;
 $Title=new Title;
 $Ad=new Ad;
 $Image=new Image;
+$Mvim=new Mvim;
