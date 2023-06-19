@@ -1,13 +1,15 @@
 <?php
-include "./Controller/Ad.php";
-include "./Controller/Admin.php";
-include "./Controller/Bottom.php";
-include "./Controller/Image.php";
-include "./Controller/Menu.php";
-include "./Controller/Mvim.php";
-include "./Controller/News.php";
-include "./Controller/Title.php";
-include "./Controller/Total.php";
+$BASEDIR=$_SERVER['DOCUMENT_ROOT'];
+
+include_once $BASEDIR."/Controller/Ad.php";
+include_once $BASEDIR."/Controller/Admin.php";
+include_once $BASEDIR."/Controller/Bottom.php";
+include_once $BASEDIR."/Controller/Image.php";
+include_once $BASEDIR."/Controller/Menu.php";
+include_once $BASEDIR."/Controller/Mvim.php";
+include_once $BASEDIR."/Controller/News.php";
+include_once $BASEDIR."/Controller/Title.php";
+include_once $BASEDIR."/Controller/Total.php";
 
 /**
  * 用來在頁面上顯示格式化的陣列內容
