@@ -6,6 +6,7 @@ class DB{
     protected $user="root";
     protected $pw="";
     protected $pdo;
+    protected $add_header='';
     /**
      * 建構式
      * 在實例化時，需要帶入一個資料表名稱，並會在實例化時，建立起對資料庫的連線
@@ -186,6 +187,24 @@ class DB{
         return $this->pdo->query($sql)->fetchColumn();
     }
 
+    public function modal($slot){
+    ?>
+    <h3><?=$this->add_header;?></h3>
+    <hr>
+    <form action="./api/add.php" method="post" enctype="multipart/form-data">
+        <table>
+            <?=$slot;?>
+            <tr>
+            <input type="hidden" name="table" value='<?=$this->table;?>'>
+                <td><input type="submit" value="新增"></td>
+                <td><input type="reset" value="重置"></td>
+            </tr>
+        </table>
+    </form>
+    
+    <?php
+    }
+
 }
 
 /**
@@ -215,7 +234,7 @@ function q($sql){
 class Ad extends DB{
 
     public $header='動態文字廣告管理';
-    public $add_header='新增動態文字廣告';
+    protected $add_header='新增動態文字廣告';
     public function __construct()
     {
         parent::__construct('ad');
@@ -233,7 +252,7 @@ class Ad extends DB{
 class Admin extends DB{
 
     public $header='管理者帳號管理';
-    public $add_header='新增管理員';
+    protected $add_header='新增管理員';
 
     public function __construct()
     {
@@ -261,31 +280,32 @@ class Admin extends DB{
 class Title extends DB{
 
     public $header='網站標題管理';
-    public $add_header='新增標題區圖片';
+    protected $add_header='新增標題區圖片';
 
     public function __construct()
     {
         parent::__construct('title');
     }
 
+
+
     public function add_form(){
-    ?>
-        <tr>
-            <td>標題區圖片：</td>
-            <td><input type="file" name='img'></td>
-        </tr>
-        <tr>
-            <td>標題區替代文字：</td>
-            <td><input type="text" name='text'></td>
-        </tr>
-    <?php
+        $this->modal("<tr>
+                        <td>標題區圖片：</td>
+                        <td><input type='file' name='img'></td>
+                      </tr>
+                      <tr>
+                        <td>標題區替代文字：</td>
+                        <td><input type='text' name='text'></td>
+                      </tr>");
+    
     }
 
 }
 class Mvim extends DB{
 
     public $header='動畫圖片管理';
-    public $add_header='新增動畫圖片';
+    protected $add_header='新增動畫圖片';
 
     public function __construct()
     {
@@ -304,7 +324,7 @@ class Mvim extends DB{
 class Image extends DB{
 
     public $header='校園映像資料管理';
-    public $add_header='新增校園映像資料圖片';
+    protected $add_header='新增校園映像資料圖片';
     public function __construct()
     {
         parent::__construct('image');
@@ -322,7 +342,7 @@ class Image extends DB{
 class News extends DB{
 
     public $header='最新消息資料管理';
-    public $add_header='新增最新消息資料';
+    protected $add_header='新增最新消息資料';
     public function __construct()
     {
         parent::__construct('news');
@@ -361,8 +381,8 @@ class Bottom extends DB{
 
 }
 class Menu extends DB{
-    
-    public $add_header='新增主選單';
+
+    protected $add_header='新增主選單';
     public $header='選單管理';
 
     public function __construct()
