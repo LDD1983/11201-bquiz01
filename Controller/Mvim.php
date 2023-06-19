@@ -13,10 +13,18 @@ class Mvim extends DB{
         $this->modal("<tr>
                         <td>動畫圖片：</td>
                         <td><input type='file' name='img'></td>
-                    </tr>");
+                    </tr>","./api/add.php");
     }
 
     public function list(){
         $this->backend("./view/mvim.php");
+    }
+    public function update_img($id){
+        $this->modal("<tr>
+                        <td>動畫圖片：</td>
+                        <td><input type='file' name='img'></td>
+                        <input type='hidden' name='id' value='$id'>
+                      </tr>
+                    ","./api/update_img.php");
     }
 }

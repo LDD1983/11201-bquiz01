@@ -23,7 +23,7 @@ public function add_form(){
 <tr>
     <td>確認密碼：</td>
     <td><input type='password' name='pw2'></td>
-</tr>");
+</tr>","./api/add.php");
 }
 
 public function list(){

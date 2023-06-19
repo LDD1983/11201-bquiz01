@@ -15,7 +15,7 @@ class Ad extends DB{
         $this->modal("<tr>
         <td><?=$this->add_header;?></td>
         <td><input type='text' name='text'></td>
-    </tr>");
+    </tr>","./api/add.php");
     }
 
     public function list(){
