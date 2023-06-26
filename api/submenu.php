@@ -3,8 +3,23 @@ include_once "../base.php";
 
 $main_id=$_POST['main_id'];
 
+//編輯/刪除次選單
+if(isset($_POST['text'])){
+    foreach($_POST['text'] as  $id => $text){
+        if(isset($_POST['del']) && in_array($id,$_POST['del'])){
+            $Menu->del($id);
+        }else{
+            $row=$Menu->find($id);
+            $row['text']=$text;
+            $row['href']=$_POST['href'][$id];
+            $Menu->save($row);
+        }
+    }
+}
 
 
+
+//新增次選單
 if(isset($_POST['text2'])){
     foreach($_POST['text2'] as $idx => $text){
         if($text!=""){
