@@ -212,5 +212,4 @@ class DB{
     
     <?php
     }
-    
 }

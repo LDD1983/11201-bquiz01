@@ -11,4 +11,7 @@ class Bottom extends DB{
         parent::__construct('bottom');
     }
 
+    function list(){
+        return $this->view('./view/bottom.php');
+    }
 }

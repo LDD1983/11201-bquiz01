@@ -9,4 +9,8 @@ class Total extends DB{
         parent::__construct('total');
     }
 
+    function list(){
+        return $this->view("./view/total.php");
+    }
+
 }
