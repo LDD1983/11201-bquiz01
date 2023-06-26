@@ -21,8 +21,9 @@
 	</div>
 
 	<div id="main">
-		<a title="" href="./home_files/home.htm">
-			<div class="ti" style="background:url(&#39;use/&#39;); background-size:cover;"></div><!--標題-->
+		<!-- <a title="$Title->find(['sh'=>1])['text']" href="index.php"> -->
+		<a title="<?=$Title->title;?>" href="index.php">
+			<div class="ti" style="background:url('./upload/<?=$Title->img;?>'); background-size:cover;"></div><!--標題-->
 		</a>
 		<div id="ms">
 			<div id="lf" style="float:left;">
