@@ -22,6 +22,11 @@ class Menu extends DB{
     }
     
     public function list(){
-        $this->view("./view/menu.php");
+        $rows=$this->all(['main_id'=>0]);
+        foreach($rows as $idx => $row){
+            $row['subs']=$this->count(['main_id'=>$row['id']]);
+            $rows[$idx]=$row;
+        }
+        $this->view("./view/menu.php" ,['rows'=>$rows]);
     }   
 }

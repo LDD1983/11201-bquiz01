@@ -17,8 +17,6 @@ if(isset($_POST['text'])){
     }
 }
 
-
-
 //新增次選單
 if(isset($_POST['text2'])){
     foreach($_POST['text2'] as $idx => $text){

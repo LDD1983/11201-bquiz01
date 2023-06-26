@@ -12,7 +12,6 @@
                     <td></td>
                 </tr>
             <?php
-                $rows=$this->all(['main_id'=>0]);
                 foreach($rows as $row){
             ?>
                 <tr>
@@ -22,7 +21,9 @@
                     <td>
                         <input type="text" name="href[<?=$row['id'];?>]" value="<?=$row['href'];?>">
                     </td>
-                    <td></td>
+                    <td>
+                        <?=$row['subs'];?>
+                    </td>
                     <td>
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':''?>>
                     </td>
