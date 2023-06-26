@@ -1,4 +1,11 @@
-
+<style>
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+</style>
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli"><?=$this->header;?>管理</p>
     <form method="post" action="./api/update.php">
@@ -11,8 +18,7 @@
                     <td></td>
                 </tr>
             <?php
-
-                $rows=$this->all();
+                $rows=$this->paginate(3);
                 foreach($rows as $row){
             ?>
                 <tr>
@@ -36,6 +42,9 @@
             ?>                
             </tbody>
         </table>
+        <div style="text-align:center">
+            <?=$this->links();?>
+        </div>
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>

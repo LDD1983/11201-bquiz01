@@ -9,7 +9,7 @@
                     <td width="7%">刪除</td>
                 </tr>
             <?php
-                $rows=$this->all();
+                $rows=$this->paginate(4);
                 foreach($rows as $row){
             ?>
                 <tr>
@@ -28,6 +28,9 @@
             ?>                
             </tbody>
         </table>
+        <div style="text-align:center">
+            <?=$this->links();?>
+        </div>
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>

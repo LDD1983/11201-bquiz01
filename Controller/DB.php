@@ -7,6 +7,7 @@ class DB{
     protected $pdo;
     protected $add_header='';
     protected $header='';
+    protected $links;
     /**
      * 建構式
      * 在實例化時，需要帶入一個資料表名稱，並會在實例化時，建立起對資料庫的連線
@@ -44,7 +45,7 @@ class DB{
                 $sql=$sql . $arg[1];
             }
         }
-
+        
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -212,4 +213,40 @@ class DB{
     
     <?php
     }
+
+    function paginate($div,$arg=null){
+        $total=$this->count($arg);
+        $pages=ceil($total/$div);
+        $now=$_GET['page']??1;
+        $start=($now-1)*$div;
+        $rows=$this->all( $arg," limit $start,$div");
+        $this->links=[
+            'total'=>$total,
+            'pages'=>$pages,
+            'now'=>$now,
+            'start'=>$start,
+        ];
+        return $rows;
+    }
+
+
+    function links(){
+        if(($this->links['now']-1)>=1){
+            $prev=$this->links['now']-1;
+           echo "<a href='?do=$this->table&page=$prev'> &lt; </a>";
+
+        }
+        
+        for($i=1;$i<=$this->links['pages'];$i++){
+            $fontsize=($i==$this->links['now'])?'24px':'16px';
+            echo "<a href='?do=$this->table&page=$i' style='font-size:$fontsize'> $i </a>";
+        }   
+
+        if(($this->links['now']+1)<=$this->links['pages']){
+                    $next=$this->links['now']+1;
+                   echo "<a href='?do=$this->table&page=$next'> &gt; </a>";
+                }
+     
+    }
+    
 }
