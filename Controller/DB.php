@@ -189,7 +189,8 @@ class DB{
     }
 
 
-    function view($path){
+    function view($path,$arg=[]){
+        extract($arg);
         include $path;
     }
 

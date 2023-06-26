@@ -34,6 +34,13 @@ public function update_img($id){
 }
 
 public function list(){
-    $this->view("./view/title.php");
+    $data=[
+      'rows'=>$this->all(),
+      'header'=>'網站標題管理',
+      'table'=>$this->table,
+      'addButton'=>'新增網站標題圖片'
+    ];
+
+    $this->view("./view/title.php",$data);
 }
 }
