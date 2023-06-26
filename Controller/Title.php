@@ -34,6 +34,6 @@ public function update_img($id){
 }
 
 public function list(){
-    $this->backend("./view/title.php");
+    $this->view("./view/title.php");
 }
 }

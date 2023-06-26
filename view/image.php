@@ -1,4 +1,8 @@
-<table width="100%">
+
+<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
+    <p class="t cent botli"><?=$this->header;?>管理</p>
+    <form method="post" action="./api/update.php">
+        <table width="100%">
             <tbody>
                 <tr class="yel">
                     <td width="68%"><?=$this->header;?></td>
@@ -41,3 +45,5 @@
                 </tr>
             </tbody>
         </table>
+        </form>
+</div>        

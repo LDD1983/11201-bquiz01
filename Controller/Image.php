@@ -26,6 +26,6 @@ class Image extends DB{
                     ","./api/update_img.php");
     }    
     public function list(){
-        $this->backend("./view/image.php");
+        $this->view("./view/image.php");
     }
 }

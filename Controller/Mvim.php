@@ -17,7 +17,7 @@ class Mvim extends DB{
     }
 
     public function list(){
-        $this->backend("./view/mvim.php");
+        $this->view("./view/mvim.php");
     }
     public function update_img($id){
         $this->modal("<tr>

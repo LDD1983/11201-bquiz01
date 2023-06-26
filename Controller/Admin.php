@@ -27,7 +27,7 @@ public function add_form(){
 }
 
 public function list(){
-    $this->backend("./view/admin.php");
+    $this->view("./view/admin.php");
 }   
 
 }

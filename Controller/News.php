@@ -19,6 +19,6 @@ class News extends DB{
     }
 
     public function list(){
-        $this->backend("./view/news.php");
+        $this->view("./view/news.php");
     }    
 }

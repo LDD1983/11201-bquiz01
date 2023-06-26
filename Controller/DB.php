@@ -187,6 +187,11 @@ class DB{
         return $this->pdo->query($sql)->fetchColumn();
     }
 
+
+    function view($path){
+        include $path;
+    }
+
     /**
      * 彈出視窗的共同模板
      */
@@ -208,18 +213,4 @@ class DB{
     <?php
     }
     
-    /**
-     * 後台管理畫面的模板
-     */
-
-    function backend($slot){
-    ?>
-    <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli"><?=$this->header;?>管理</p>
-        <form method="post" action="./api/update.php">
-            <?php include $slot;?>
-        </form>
-    </div>
-    <?php
-    }
 }

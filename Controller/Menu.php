@@ -22,6 +22,6 @@ class Menu extends DB{
     }
     
     public function list(){
-        $this->backend("./view/menu.php");
+        $this->view("./view/menu.php");
     }   
 }

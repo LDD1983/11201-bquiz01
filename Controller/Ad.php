@@ -19,6 +19,6 @@ class Ad extends DB{
     }
 
     public function list(){
-        $this->backend("./view/ad.php");
+        $this->view("./view/ad.php");
     }    
 }
