@@ -29,7 +29,7 @@ class Ad extends DB{
             $str.= "&nbs;&nbs;".$row['text'];
         } */
 
-        $str=join('&nbsp;$nbsp;',array_column($rows,'text'));
+        $str=join('&nbsp;&nbsp;',array_column($rows,'text'));
 
         return $str;
     }
