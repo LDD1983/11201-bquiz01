@@ -1,6 +1,15 @@
 // JavaScript Document
 $(document).ready(function(e) {
-    $(".mainmu").mouseover(
+	$(".mainmu").hover(
+		function(){
+			$(this).children(".mw").stop().show()
+		},
+		function(){
+			$(this).children(".mw").hide()
+		}
+	)
+
+    /* $(".mainmu").mouseover(
 		function()
 		{
 			$(this).children(".mw").stop().show()
@@ -11,7 +20,7 @@ $(document).ready(function(e) {
 		{
 			$(this).children(".mw").hide()
 		}
-	)
+	) */
 });
 function lo(x)
 {

@@ -39,6 +39,10 @@
 						echo 	"<a href='{$row['href']}'>";
 						echo 		$row['text'];
 						echo 	"</a>";
+						echo "<div class='mw'>";
+						echo 	"<div class='mainmu2'>次選單</div>";
+						echo 	"<div class='mainmu2'>次選單</div>";
+						echo "</div>";
 						echo "</div>";
 
 					}
