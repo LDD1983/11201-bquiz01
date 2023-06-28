@@ -116,7 +116,7 @@
 								nowpage--;
 							}
 
-							if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3) {
+							if (x == 2 && nowpage  < num - 3) { //修正原程式的錯誤
 								console.log("nowpage",nowpage)
 								nowpage++;
 							}
