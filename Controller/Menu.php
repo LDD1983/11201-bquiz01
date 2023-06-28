@@ -29,4 +29,11 @@ class Menu extends DB{
         }
         $this->view("./view/menu.php" ,['rows'=>$rows]);
     }   
+
+    public function show(){
+        $rows=$this->all(['sh'=>1,"main_id"=>0]);
+
+        return $rows;
+
+    }
 }
