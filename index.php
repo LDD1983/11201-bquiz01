@@ -112,12 +112,10 @@
 							var s, t;
 
 							if (x == 1 && nowpage - 1 >= 0) {
-								console.log("nowpage",nowpage)
 								nowpage--;
 							}
 
 							if (x == 2 && nowpage  < num - 3) { //修正原程式的錯誤
-								console.log("nowpage",nowpage)
 								nowpage++;
 							}
 
