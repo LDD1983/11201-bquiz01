@@ -39,10 +39,18 @@
 						echo 	"<a href='{$row['href']}'>";
 						echo 		$row['text'];
 						echo 	"</a>";
-						echo "<div class='mw'>";
-						echo 	"<div class='mainmu2'>次選單</div>";
-						echo 	"<div class='mainmu2'>次選單</div>";
-						echo "</div>";
+						if(isset($row['subs'])){
+						echo 	"<div class='mw'>";
+							foreach($row['subs'] as $sub){
+								echo "<div class='mainmu2'>";
+								echo "<a href='{$sub['href']}'>";
+								echo $sub['text'];
+								echo "</a>";
+								echo "</div>";
+							}
+						
+						echo 	"</div>";
+						}
 						echo "</div>";
 
 					}
