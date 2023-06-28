@@ -40,7 +40,7 @@
 						echo 		$row['text'];
 						echo 	"</a>";
 						if(isset($row['subs'])){
-						echo 	"<div class='mw'>";
+						echo 	"<div class='mw'>"; 
 							foreach($row['subs'] as $sub){
 								echo "<div class='mainmu2'>";
 								echo "<a href='{$sub['href']}'>";
@@ -48,11 +48,9 @@
 								echo "</a>";
 								echo "</div>";
 							}
-						
 						echo 	"</div>";
 						}
 						echo "</div>";
-
 					}
 
 					?>
