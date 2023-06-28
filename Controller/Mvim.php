@@ -27,4 +27,11 @@ class Mvim extends DB{
                       </tr>
                     ","./api/update_img.php");
     }
+
+    function show(){
+        $rows=$this->all(['sh'=>1]);
+        foreach($rows as $row){
+            echo "lin.push('./upload/{$row['img']}');";
+        }
+    }
 }

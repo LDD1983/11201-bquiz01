@@ -11,11 +11,8 @@
     </div>
     <script>
         var lin = new Array();
-            <?php
-            $rows=$Mvim->all(['sh'=>1]);
-            foreach($rows as $row){
-                echo "lin.push('./upload/{$row['img']}');";
-            }
+        <?php
+            $Mvim->show();
         ?>
         var now = 0;
         if (lin.length > 1) {
