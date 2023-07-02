@@ -24,6 +24,7 @@
                     <td>
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
                     </td>
+                        <input type="hidden" name="id[<?=$row['id'];?>]" value="<?=$row['id'];?>">
                     <td>
                         <input type="button" value="更換動畫" 
                             onclick="op('#cover','#cvr','./modal/update_img.php?table=<?=$this->table;?>&id=<?=$row['id'];?>')">

@@ -2,8 +2,12 @@
 <?php include "marquee.php";?>
 	<div style="height:32px; display:block;"></div>
 	<!--正中央-->
+
+	<?php 
+		$News->moreNews(); //顯示更多消息的列表
+	?>
 	<div style="text-align:center;">
-		<a class="bl" style="font-size:30px;" href="?do=meg&p=0">&lt;&nbsp;</a>
-		<a class="bl" style="font-size:30px;" href="?do=meg&p=0">&nbsp;&gt;</a>
+		<!--顯示分頁連結-->
+		<?=$News->links();?>
 	</div>
 </div>
