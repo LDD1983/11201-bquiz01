@@ -50,3 +50,6 @@ $Mvim=new Mvim;
 $News=new News;
 $Admin=new Admin;
 $Menu=new Menu;
+
+
+$Total->online();
