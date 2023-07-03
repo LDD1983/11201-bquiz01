@@ -40,8 +40,11 @@ public function update_img($id){
 }
 
 
-
+/**
+ * list()方法用來在後台顯示資料列表，
+ */
 public function list(){
+    //利用一個$data陣列來放置我們要在畫面中使用的變數及資料
     $data=[
       'rows'=>$this->all(),
       'header'=>'網站標題管理',
@@ -49,6 +52,7 @@ public function list(){
       'addButton'=>'新增網站標題圖片'
     ];
 
+    //利用view()這個方法來載入頁面，並同時把$dada代入
     $this->view("./view/title.php",$data);
 }
 }

@@ -9,6 +9,10 @@ class Total extends DB{
         parent::__construct('total');
     }
 
+    /**
+     * 前台頁面顯示用的方法
+     * 在這裏是顯示目前的網站瀏灠人數
+     */
     function show(){
         return $this->find(1)['total'];
         //return $this->all(' limit 1')[0]['bottom'];
