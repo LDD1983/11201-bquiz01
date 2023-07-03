@@ -37,6 +37,8 @@ function login($user){
         $chk=$this->count(['acc'=>$user['acc'],
                            'pw'=>$user['pw']]);
         if($chk>0){
+            session_start();
+            $_SESSION['login']=$user['acc'];
             to('backend.php');
         }else{
         ?>
